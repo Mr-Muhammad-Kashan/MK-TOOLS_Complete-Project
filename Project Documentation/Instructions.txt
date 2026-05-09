@@ -1,0 +1,518 @@
+So last year I created an application using Python. First of all, I need you to deeply understand my complete project structure tree, okay? And I will give you that tree first. Here is the complete project structure tree: 
+
+📦MK-TOOLS
+ ┣ 📂gifs
+ ┃ ┣ 📜Advanced-Scan.gif
+ ┃ ┣ 📜Cleaning.gif
+ ┃ ┣ 📜Done.gif
+ ┃ ┣ 📜Performance-gif.gif
+ ┃ ┣ 📜Simple-Scan.gif
+ ┃ ┣ 📜UI-gif.gif
+ ┃ ┗ 📜Yipee.gif
+ ┣ 📂Group Policy Editor Tools
+ ┃ ┣ 📂MyLocalGPO_Backup
+ ┃ ┃ ┗ 📂{C062992B-B594-4089-9BC2-FC1DC341B30D}
+ ┃ ┃ ┃ ┣ 📂DomainSysvol
+ ┃ ┃ ┃ ┃ ┗ 📂GPO
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂Machine
+ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂microsoft
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂windows nt
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂Audit
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜audit.csv
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂SecEdit
+ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜GptTmpl.inf
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜registry.pol
+ ┃ ┃ ┃ ┃ ┃ ┗ 📂User
+ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜registry.pol
+ ┃ ┃ ┃ ┣ 📜Backup.xml
+ ┃ ┃ ┃ ┗ 📜Bkupinfo.xml
+ ┃ ┗ 📜LGPO.exe
+ ┣ 📂Icons
+ ┃ ┣ 📜About.png
+ ┃ ┣ 📜Clean-Cache.png
+ ┃ ┣ 📜Cleaning.png
+ ┃ ┣ 📜Email.ico
+ ┃ ┣ 📜Fix-Windows.png
+ ┃ ┣ 📜FixWindows-2.png
+ ┃ ┣ 📜FixWindows.png
+ ┃ ┣ 📜GitHub.ico
+ ┃ ┣ 📜Group-Policy.png
+ ┃ ┣ 📜Linkedin.ico
+ ┃ ┣ 📜Logo.ico
+ ┃ ┣ 📜Performance-Icon.png
+ ┃ ┣ 📜Policies.png
+ ┃ ┣ 📜Programmer.png
+ ┃ ┣ 📜Rocket.png
+ ┃ ┣ 📜Sound-OFF.png
+ ┃ ┣ 📜Sound-ON.png
+ ┃ ┣ 📜UI-Responsiveness.png
+ ┃ ┗ 📜UI-Tweaks.png
+ ┣ 📂logs
+ ┃ ┣ 📜mk-tools_2025-07-26_13-18-28.log
+ ┃ ┣ 📜mk-tools_2025-07-26_13-19-36.log
+ ┣ 📂Sound Effects
+ ┃ ┣ 📜Advanced-Scan.mp3
+ ┃ ┣ 📜App-Shutdown.mp3
+ ┃ ┣ 📜Clean-all-button.mp3
+ ┃ ┣ 📜Clean-All-Complete.mp3
+ ┃ ┣ 📜Cleaning.mp3
+ ┃ ┣ 📜Coin.mp3
+ ┃ ┣ 📜Email-Button-Click.mp3
+ ┃ ┣ 📜Error-404.mp3
+ ┃ ┣ 📜Feature-Hover.mp3
+ ┃ ┣ 📜Fix-Windows-Hover-Effect.mp3
+ ┃ ┣ 📜Github-Button-Click.mp3
+ ┃ ┣ 📜Horray-No-Errors-Found.mp3
+ ┃ ┣ 📜JUST DO IT - Sound Effect.mp3
+ ┃ ┣ 📜LinkedIn-Button-Click.mp3
+ ┃ ┣ 📜Manual-Clean.mp3
+ ┃ ┣ 📜Money.mp3
+ ┃ ┣ 📜Mouse-Click-Ok.mp3
+ ┃ ┣ 📜Mouse-Click.mp3
+ ┃ ┣ 📜Mouse-Hover.mp3
+ ┃ ┣ 📜Navigation-Click-Sound.mp3
+ ┃ ┣ 📜Navigation-Sound.mp3
+ ┃ ┣ 📜Notification.mp3
+ ┃ ┣ 📜Oh-No.mp3
+ ┃ ┣ 📜Questionmark.mp3
+ ┃ ┣ 📜Reset-Defaults.mp3
+ ┃ ┣ 📜Scan-Fix-Windows-Effect.mp3
+ ┃ ┣ 📜setup-unsuccessful.mp3
+ ┃ ┣ 📜Startup-Sound.mp3
+ ┃ ┣ 📜Thanks-Coffee_Button.mp3
+ ┃ ┣ 📜Turn-Off.mp3
+ ┃ ┣ 📜Turn-On.mp3
+ ┃ ┣ 📜Warning.mp3
+ ┃ ┗ 📜what-is-it.mp3
+ ┣ 📂Svg
+ ┃ ┣ 📜About.svg
+ ┃ ┣ 📜Clean.svg
+ ┃ ┣ 📜Dashboard.svg
+ ┃ ┣ 📜Fix-Windows.svg
+ ┃ ┣ 📜Group-Policy.svg
+ ┃ ┣ 📜Performance.svg
+ ┃ ┗ 📜UI-Responsiveness.svg
+ ┣ 📂Version
+ ┃ ┣ 📜Version.json
+ ┃ ┗ 📜Version.txt
+ ┣ 📜main.py
+ ┣ 📜NotoColorEmoji-Regular.ttf
+ ┣ 📜Pyinstaller-Command.txt
+ ┣ 📜requirements.txt
+ ┣ 📜Roboto-Bold.ttf
+
+
+ Here is what I was doing previously. As you have the complete information, my project directory of MKTools. So here is the thing: So after my completing the complete Node Python file, I was testing it and the first thing I did was I converted my main.py file into an Executable file using PyInstaller by using this command: " pyinstaller --name "MK-Tools(v1.0)" --onefile --windowed --icon="Icons\Logo.ico" --uac-admin --hidden-import="pyglet.font" --hidden-import="win32com.shell" --hidden-import="cairosvg" --clean main.py" and In order to convert this whole structure into the setup installer setup, I was using the tool named as INNO Setup Installer. So what I was doing that I was copying my main.py and putting in somewhere else. And now we have the complete project structure with the exe file. Then I used Inno Setup code that is already present in the MK tools folder. You can also see the .iss file that has a complete code of Inno Setup, so you also have the complete knowledge which set of I was using. So the purpose of license and license.txt file was so when during the installation, the users can read the license, okay? And of course, it will not include the MK tools installers, but what it was doing, it was putting this whole tree:
+
+📦MK-Tools
+
+┣ 📂gifs
+
+┃ ┣ 📜Advanced-Scan.gif
+
+┃ ┣ 📜Cleaning.gif
+
+┃ ┣ 📜Done.gif
+
+┃ ┣ 📜Performance-gif.gif
+
+┃ ┣ 📜Simple-Scan.gif
+
+┃ ┣ 📜UI-gif.gif
+
+┃ ┗ 📜Yipee.gif
+
+┣ 📂Group Policy Editor Tools
+
+┃ ┣ 📂MyLocalGPO_Backup
+
+┃ ┃ ┗ 📂{C062992B-B594-4089-9BC2-FC1DC341B30D}
+
+┃ ┃ ┃ ┣ 📂DomainSysvol
+
+┃ ┃ ┃ ┃ ┗ 📂GPO
+
+┃ ┃ ┃ ┃ ┃ ┣ 📂Machine
+
+┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂microsoft
+
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂windows nt
+
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂Audit
+
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜audit.csv
+
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂SecEdit
+
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜GptTmpl.inf
+
+┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜registry.pol
+
+┃ ┃ ┃ ┃ ┃ ┗ 📂User
+
+┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜registry.pol
+
+┃ ┃ ┃ ┣ 📜Backup.xml
+
+┃ ┃ ┃ ┗ 📜Bkupinfo.xml
+
+┃ ┗ 📜LGPO.exe
+
+┣ 📂Icons
+
+┃ ┣ 📜About.png
+
+┃ ┣ 📜Clean-Cache.png
+
+┃ ┣ 📜Cleaning.png
+
+┃ ┣ 📜Email.ico
+
+┃ ┣ 📜Fix-Windows.png
+
+┃ ┣ 📜FixWindows-2.png
+
+┃ ┣ 📜FixWindows.png
+
+┃ ┣ 📜GitHub.ico
+
+┃ ┣ 📜Group-Policy.png
+
+┃ ┣ 📜Linkedin.ico
+
+┃ ┣ 📜Logo.ico
+
+┃ ┣ 📜Performance-Icon.png
+
+┃ ┣ 📜Policies.png
+
+┃ ┣ 📜Programmer.png
+
+┃ ┣ 📜Rocket.png
+
+┃ ┣ 📜Sound-OFF.png
+
+┃ ┣ 📜Sound-ON.png
+
+┃ ┣ 📜UI-Responsiveness.png
+
+┃ ┗ 📜UI-Tweaks.png
+
+┣ 📂logs
+
+┃ ┗ 📜mk-tools_2025-08-10_17-19-59.log
+
+┣ 📂Sound Effects
+
+┃ ┣ 📜Advanced-Scan.mp3
+
+┃ ┣ 📜App-Shutdown.mp3
+
+┃ ┣ 📜Clean-all-button.mp3
+
+┃ ┣ 📜Clean-All-Complete.mp3
+
+┃ ┣ 📜Cleaning.mp3
+
+┃ ┣ 📜Coin.mp3
+
+┃ ┣ 📜Email-Button-Click.mp3
+
+┃ ┣ 📜Error-404.mp3
+
+┃ ┣ 📜Feature-Hover.mp3
+
+┃ ┣ 📜Fix-Windows-Hover-Effect.mp3
+
+┃ ┣ 📜Github-Button-Click.mp3
+
+┃ ┣ 📜Horray-No-Errors-Found.mp3
+
+┃ ┣ 📜JUST DO IT - Sound Effect.mp3
+
+┃ ┣ 📜LinkedIn-Button-Click.mp3
+
+┃ ┣ 📜Manual-Clean.mp3
+
+┃ ┣ 📜Money.mp3
+
+┃ ┣ 📜Mouse-Click-Ok.mp3
+
+┃ ┣ 📜Mouse-Click.mp3
+
+┃ ┣ 📜Mouse-Hover.mp3
+
+┃ ┣ 📜Navigation-Click-Sound.mp3
+
+┃ ┣ 📜Navigation-Sound.mp3
+
+┃ ┣ 📜Notification.mp3
+
+┃ ┣ 📜Oh-No.mp3
+
+┃ ┣ 📜Questionmark.mp3
+
+┃ ┣ 📜Reset-Defaults.mp3
+
+┃ ┣ 📜Scan-Fix-Windows-Effect.mp3
+
+┃ ┣ 📜setup-unsuccessful.mp3
+
+┃ ┣ 📜Startup-Sound.mp3
+
+┃ ┣ 📜Thanks-Coffee_Button.mp3
+
+┃ ┣ 📜Turn-Off.mp3
+
+┃ ┣ 📜Turn-On.mp3
+
+┃ ┣ 📜Warning.mp3
+
+┃ ┗ 📜what-is-it.mp3
+
+┣ 📂Svg
+
+┃ ┣ 📜About.svg
+
+┃ ┣ 📜Clean.svg
+
+┃ ┣ 📜Dashboard.svg
+
+┃ ┣ 📜Fix-Windows.svg
+
+┃ ┣ 📜Group-Policy.svg
+
+┃ ┣ 📜Performance.svg
+
+┃ ┗ 📜UI-Responsiveness.svg
+
+┣ 📂Version
+
+┃ ┣ 📜Version.json
+
+┃ ┗ 📜Version.txt
+
+┣ 📜LICENSE
+
+┣ 📜license.txt
+
+┣ 📜MK-Tools(v1.0).exe
+
+┣ 📜NotoColorEmoji-Regular.ttf
+
+┣ 📜README.md
+
+┣ 📜ReadMe.txt
+
+┗ 📜Roboto-Bold.ttf
+
+complete setup.exe file that I uploaded on my GitHub. So basically, when the, and I uploaded this all to the world. So basically, just like any other softwares, like CPUs or any other software in the world, like they have an installer, so I created an installer for my application. So when the user, you upon this setup and this download, install it just like in any other software, they select the location. For example, they select any location or by default, it is located at here: ""C:\Program Files (x86)\MK-TOOLS", "the other location he wants. So when the installation will complete, this will, and this will be how the application structure will look like on the user's PC:
+
+📦MK-Tools
+
+┣ 📂gifs
+
+┃ ┣ 📜Advanced-Scan.gif
+
+┃ ┣ 📜Cleaning.gif
+
+┃ ┣ 📜Done.gif
+
+┃ ┣ 📜Performance-gif.gif
+
+┃ ┣ 📜Simple-Scan.gif
+
+┃ ┣ 📜UI-gif.gif
+
+┃ ┗ 📜Yipee.gif
+
+┣ 📂Group Policy Editor Tools
+
+┃ ┣ 📂MyLocalGPO_Backup
+
+┃ ┃ ┗ 📂{C062992B-B594-4089-9BC2-FC1DC341B30D}
+
+┃ ┃ ┃ ┣ 📂DomainSysvol
+
+┃ ┃ ┃ ┃ ┗ 📂GPO
+
+┃ ┃ ┃ ┃ ┃ ┣ 📂Machine
+
+┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂microsoft
+
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂windows nt
+
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂Audit
+
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜audit.csv
+
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂SecEdit
+
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜GptTmpl.inf
+
+┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜registry.pol
+
+┃ ┃ ┃ ┃ ┃ ┗ 📂User
+
+┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜registry.pol
+
+┃ ┃ ┃ ┣ 📜Backup.xml
+
+┃ ┃ ┃ ┗ 📜Bkupinfo.xml
+
+┃ ┗ 📜LGPO.exe
+
+┣ 📂Icons
+
+┃ ┣ 📜About.png
+
+┃ ┣ 📜Clean-Cache.png
+
+┃ ┣ 📜Cleaning.png
+
+┃ ┣ 📜Email.ico
+
+┃ ┣ 📜Fix-Windows.png
+
+┃ ┣ 📜FixWindows-2.png
+
+┃ ┣ 📜FixWindows.png
+
+┃ ┣ 📜GitHub.ico
+
+┃ ┣ 📜Group-Policy.png
+
+┃ ┣ 📜Linkedin.ico
+
+┃ ┣ 📜Logo.ico
+
+┃ ┣ 📜Performance-Icon.png
+
+┃ ┣ 📜Policies.png
+
+┃ ┣ 📜Programmer.png
+
+┃ ┣ 📜Rocket.png
+
+┃ ┣ 📜Sound-OFF.png
+
+┃ ┣ 📜Sound-ON.png
+
+┃ ┣ 📜UI-Responsiveness.png
+
+┃ ┗ 📜UI-Tweaks.png
+
+┣ 📂logs
+
+┃ ┗ 📜mk-tools_2025-08-10_17-19-59.log
+
+┣ 📂Sound Effects
+
+┃ ┣ 📜Advanced-Scan.mp3
+
+┃ ┣ 📜App-Shutdown.mp3
+
+┃ ┣ 📜Clean-all-button.mp3
+
+┃ ┣ 📜Clean-All-Complete.mp3
+
+┃ ┣ 📜Cleaning.mp3
+
+┃ ┣ 📜Coin.mp3
+
+┃ ┣ 📜Email-Button-Click.mp3
+
+┃ ┣ 📜Error-404.mp3
+
+┃ ┣ 📜Feature-Hover.mp3
+
+┃ ┣ 📜Fix-Windows-Hover-Effect.mp3
+
+┃ ┣ 📜Github-Button-Click.mp3
+
+┃ ┣ 📜Horray-No-Errors-Found.mp3
+
+┃ ┣ 📜JUST DO IT - Sound Effect.mp3
+
+┃ ┣ 📜LinkedIn-Button-Click.mp3
+
+┃ ┣ 📜Manual-Clean.mp3
+
+┃ ┣ 📜Money.mp3
+
+┃ ┣ 📜Mouse-Click-Ok.mp3
+
+┃ ┣ 📜Mouse-Click.mp3
+
+┃ ┣ 📜Mouse-Hover.mp3
+
+┃ ┣ 📜Navigation-Click-Sound.mp3
+
+┃ ┣ 📜Navigation-Sound.mp3
+
+┃ ┣ 📜Notification.mp3
+
+┃ ┣ 📜Oh-No.mp3
+
+┃ ┣ 📜Questionmark.mp3
+
+┃ ┣ 📜Reset-Defaults.mp3
+
+┃ ┣ 📜Scan-Fix-Windows-Effect.mp3
+
+┃ ┣ 📜setup-unsuccessful.mp3
+
+┃ ┣ 📜Startup-Sound.mp3
+
+┃ ┣ 📜Thanks-Coffee_Button.mp3
+
+┃ ┣ 📜Turn-Off.mp3
+
+┃ ┣ 📜Turn-On.mp3
+
+┃ ┣ 📜Warning.mp3
+
+┃ ┗ 📜what-is-it.mp3
+
+┣ 📂Svg
+
+┃ ┣ 📜About.svg
+
+┃ ┣ 📜Clean.svg
+
+┃ ┣ 📜Dashboard.svg
+
+┃ ┣ 📜Fix-Windows.svg
+
+┃ ┣ 📜Group-Policy.svg
+
+┃ ┣ 📜Performance.svg
+
+┃ ┗ 📜UI-Responsiveness.svg
+
+┣ 📂Version
+
+┃ ┣ 📜Version.json
+
+┃ ┗ 📜Version.txt
+
+┣ 📜LICENSE
+
+┣ 📜license.txt
+
+┣ 📜MK-Tools(v1.0).exe
+
+┣ 📜NotoColorEmoji-Regular.ttf
+
+┣ 📜README.md
+
+┣ 📜ReadMe.txt
+
+┗ 📜Roboto-Bold.ttf
+
+it will create the desktop shortcut as well if the user selected that. So this is the whole overview what I was doing, okay? And in this project you will notice there is a file named as a folder named as version and it has JSON file and TXT file. What it was doing is, so I created a new repository in my GitHub and I uploaded the versioned JSON file there. So it as you also will analyze my complete code, you will understand that this version application checks with the third version file on my GitHub. So if those version file and this file doesn't matches or this the version file that I have is have latest version, it will give the user the pop-up that new update is required. So this was the trick I applied in order to update the application on the user system. So this is a trick that I used. All the other files and folders you can easily have an access. Okay.
+
+
+But you know, the thing, the problem is, I only created one Python file that has the complete code of my complete application. The complete code exceeds around 10,000 lines of code. So first of all, I need you to deeply understand it. So I was thinking, why not upload this whole project on GitHub and then use Jules, which is provided by Google, and in that Jules, I will use the Gemini 3.1 latest model, Pro model that they have, or whatever latest Pro model they have, and as you know, the Jules is an AI agent that can read my complete GitHub project. So I will just give my that repository to Jules, and I need your help to tell me, is it possible that I ask in Jules to convert my one Python file into the complete functional, structured form? For example, we have multiple folders containing multiple Python files, and in the end, we have one main Python file. You know what I'm trying to say?Because my application is so complex, I need it to be in a properly well-structured manner rather than the whole code in one file because I was thinking to improve this application in the future. So basically what I've did is, as you know my complete project structure, so I did what I did is, create an executable file of my main Python file, and then kept the whole files and folders as it is, and I used Inno Setup installer to like convert all of these executable files and all of these files and folders into the one setup file. So if users download my file, they can easily install it and all the so files and subfolders and executable files will be installed on their system in the same structure way that I have currently right now. Of course, the Python file will be removed.So this is the thing, but right now I am uploading this whole project structure on my GitHub, and I want your help. So I want your help to give me the most powerful, very highly detailed, very, very powerful prompt, structured prompt, specially designed for that tools AI agent that is provided by Gemini 3.1 Pro model that I can use to tell the instructions to tools that first it will deeply understand line by line, word by word, my complete code, no matter how long the code it is of the main Python file, and then create multiple folders of multiple Python files, okay? Like put all the resources files and all the other files into the, create a new folder like resources and stuff like that and put all of my current files in that resource folder and create multiple folders, subfolders, and multiple files of Python as it can contain. So basically, it should convert my complete Python code into that properly industrial-grade, highly military-grade level structured format.without breaking the functionality of the application or anything else, and it should make sure that every file is 100% complete, structurized, and there should be no dependencies, and it should work 100% perfectly fine, same as it's currently working now. So this is a very, very critical task. As you know, my code is in the main Python file, it's more than 10,000 lines, so it should be very accurate and stuff like that. I hope you understand my complete situation. Please give me the top-notch answer.
+
+

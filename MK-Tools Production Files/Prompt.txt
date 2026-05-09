@@ -1,0 +1,69 @@
+Thank you for asking before starting. Here are my answers to all 4 questions, followed by one additional critical requirement you must read and understand fully before beginning Phase 1.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ANSWERS TO YOUR 4 QUESTIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+QUESTION 1 — OUTPUT DIRECTORY STRUCTURE: Do NOT use src/ or any extra wrapper folder. Place all new package folders (core/, ui/, audio/, resources/, etc.) inside a single root-level package folder named app/ — so the structure sits as app/ directly in the repository root alongside main.py. This keeps it clean and PyInstaller-friendly.
+
+QUESTION 2 — MISSING FILES: Yes, both files are missing from the repo. Handle them as follows:
+
+requirements.txt: Generate it from scratch by reading every third-party import found in main.py and listing each package with no pinned versions unless you can determine the exact version from context in the code.
+Pyinstaller-Command.txt: Generate it from scratch based on the new modular structure you build. Include all --add-data flags pointing to the new assets/ folder (explained in full detail below). Include all --hidden-import flags for every app/ subpackage. Use --noconsole and --onefile flags. Base the entry point on the new slim main.py.
+QUESTION 3 — PYTHON VERSION: Target Python 3.10 and above. You may use match/case, union type hints with the | operator, and any stdlib features available from 3.10 onward.
+
+QUESTION 4 — THIRD-PARTY DEPENDENCIES: Strict adherence ONLY. Do not introduce any new libraries whatsoever — not even lightweight ones like python-dotenv or anything else. Use exclusively what is already imported in main.py. The refactoring is purely structural. Zero new dependencies. Period.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ADDITIONAL CRITICAL REQUIREMENT — ASSET FOLDER CONSOLIDATION ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Read this section with the same level of attention as everything above. This is not optional. This is a hard requirement.
+
+CURRENT SITUATION: Right now the project root contains these scattered asset folders and files:
+
+Icons/
+gifs/
+Svg/
+Sound Effects/
+Version/
+Group Policy Editor Tools/
+NotoColorEmoji-Regular.ttf
+Roboto-Bold.ttf
+The current main.py code directly references paths into these folders. For example the code loads files using paths like "Icons/Logo.ico" or "gifs/Cleaning.gif" or "Sound Effects/Startup-Sound.mp3" and so on.
+
+WHAT YOU MUST DO: Consolidate ALL of these asset folders and font files into ONE single top-level folder called assets/ placed directly in the repository root. The internal folder names inside assets/ must remain exactly the same as they are now. The structure inside assets/ must look like this:
+
+assets/ ├── Icons/ ├── gifs/ ├── Svg/ ├── Sound Effects/ ├── Version/ ├── Group Policy Editor Tools/ ├── NotoColorEmoji-Regular.ttf └── Roboto-Bold.ttf
+
+CRITICAL RULE — EVERY PATH REFERENCE IN CODE MUST BE UPDATED: When you move these folders into assets/, you MUST find and update every single path reference in the entire codebase that points to any of these resources. Not some of them. Every single one without exception.
+
+During your Phase 1 analysis in Analysis Section 9, you will catalogue every file path reference in main.py. When you implement Phase 3, every one of those path references must be updated to reflect the new assets/ prefix. For example: OLD: "Icons/Logo.ico" → NEW: "assets/Icons/Logo.ico" OLD: "gifs/Cleaning.gif" → NEW: "assets/gifs/Cleaning.gif" OLD: "Sound Effects/x.mp3" → NEW: "assets/Sound Effects/x.mp3" OLD: "NotoColorEmoji-Regular.ttf" → NEW: "assets/NotoColorEmoji-Regular.ttf"
+
+All of this path resolution must go through the centralized resource path module that you design in Phase 2 (for example app/resources/paths.py or its equivalent based on what your analysis reveals). That module must build all paths relative to the assets/ folder using pathlib.Path. It must also handle PyInstaller's sys._MEIPASS correctly so that all paths resolve properly both in development mode and inside the compiled executable.
+
+INNO SETUP COMPATIBILITY — READ THIS CAREFULLY: This application uses Inno Setup to package everything into a user-facing installer. That installer replicates the exact final folder structure of the project onto the end user's system when they install the application. This means the folder structure you produce is not just a dev concern — it is literally what gets installed on real users' machines.
+
+Therefore the final folder structure must be clean, logical, and fully consistent. The assets/ folder must be present and correctly structured. Every path in the code must match that structure exactly. If there is any mismatch between the folder structure and the path references in the code, the application will crash on the user's machine.
+
+When you generate Pyinstaller-Command.txt, all --add-data flags must point to the new assets/ subfolders, not the old scattered root-level paths. For example: --add-data "assets/Icons;Icons" --add-data "assets/gifs;gifs" --add-data "assets/Svg;Svg" --add-data "assets/Sound Effects;Sound Effects" --add-data "assets/Version;Version" --add-data "assets/Group Policy Editor Tools;Group Policy Editor Tools" --add-data "assets/NotoColorEmoji-Regular.ttf;." --add-data "assets/Roboto-Bold.ttf;."
+
+ZERO TOLERANCE ON MISSED PATH UPDATES: If even one path reference in the code still points to the old location such as "Icons/something.png" instead of going through the centralized path resolver pointing to assets/Icons/something.png, the application will crash at runtime when that resource is loaded. This is completely unacceptable. Your Phase 4 self-verification must explicitly confirm that zero old-style raw path strings remain anywhere in the codebase.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ COMPLETE SUMMARY OF ALL REQUIREMENTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+To make absolutely sure nothing is missed, here is the full picture:
+
+Python code package: app/ folder placed directly in repository root
+Entry point: new slim main.py in repository root, App().run() only
+All asset folders and fonts: moved into assets/ at repository root
+Internal structure inside assets/: identical folder names as before
+Every path reference in the code: updated to use assets/ via the centralized path resolution module, zero hardcoded raw strings
+Centralized path module: uses pathlib.Path, handles sys._MEIPASS
+PyInstaller command: generated from scratch, all --add-data flags point to assets/ subfolders, all app/ hidden imports included, --noconsole and --onefile flags included
+requirements.txt: generated from scratch from actual imports in main.py, no pinned versions unless determinable from code
+Python version target: 3.10 and above
+New third-party libraries: absolutely none, zero, existing only
+Inno Setup awareness: final folder structure is what gets installed on end user machines, it must be clean and fully consistent
+Project structure tree: designed entirely from what you find in main.py during Phase 1 — nothing assumed, nothing invented
+Every file 100% complete: zero stubs, zero TODOs, zero placeholders
+Zero circular imports: dependency flows one direction only
+All threading preserved: exactly as in original main.py
+All functionality preserved: identical behavior before and after
+You now have complete and final clarity on every requirement. Begin Phase 1 now. Open main.py and read every single line from top to bottom. Do not design any structure. Do not write any code. Just read and analyze first.

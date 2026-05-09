@@ -1,0 +1,83 @@
+################################################################################
+#                                                                              #
+#                            MK-TOOLS - VERSION 1.1.0                            #
+#                          "The Phoenix Update"                                #
+#                                                                              #
+################################################################################
+
+RELEASE DATE: 2025-09-01
+STATUS: Stable
+
+================================================================================
+== SUMMARY
+================================================================================
+
+This is a landmark update focused on professionalizing the application for its
+public release. It introduces a robust, non-blocking update checker, adds powerful
+Group Policy management capabilities, and includes major bug fixes to enhance
+stability, performance, and the overall user experience.
+
+================================================================================
+== DIRECT DOWNLOAD
+================================================================================
+
+You can download the installer for this version directly from our GitHub Releases page:
+
+[IMPORTANT: REPLACE THIS WITH YOUR DIRECT GITHUB RELEASE DOWNLOAD LINK]
+https://github.com/Mr-Muhammad-Kashan/MK-Tools/releases/download/v1.1.0/MK-Tools_v1.1.0_Setup.exe
+
+================================================================================
+== INSTALLER VERIFICATION (SECURITY)
+================================================================================
+
+To ensure your download is authentic and has not been tampered with, you can
+verify its SHA-256 checksum.
+
+FILE: MK-Tools_v1.1.0_Setup.exe
+SHA-256 HASH: a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6
+
+[NOTE: Replace the hash above with the real hash you generate for your setup file.]
+
+================================================================================
+== CHANGELOG
+================================================================================
+
+--- ✨ NEW FEATURES ---
+
+-   **Automatic Update Checker**: The application now automatically checks for new
+    versions on startup without impacting performance. A notification will appear
+    if an update is available.
+-   **Group Policy Editor Module**: A new "Group Policy" section has been added,
+    allowing users to apply a curated set of optimized system policies for
+    enhanced privacy and performance with a single click. (Not available on
+    Windows Home editions).
+
+--- 🚀 IMPROVEMENTS & OPTIMIZATIONS ---
+
+-   **100% Accurate Cache Cleaning**: The "Clean Cache" module has been completely
+    overhauled. It now uses a high-performance PowerShell engine to calculate
+    folder sizes, ensuring the "space cleaned" metric is perfectly accurate.
+-   **Enhanced Auditory Feedback**: The hover sound effect system has been upgraded
+    to a stateful protocol, preventing repetitive sound "spam" when moving the
+    mouse over interactive elements.
+
+--- 🛠️ BUG FIXES ---
+
+-   **Startup Stability**: Fixed a critical race condition that could occur during
+    the splash screen's pre-flight checks, ensuring a 100% stable application launch.
+-   **UI Layout Integrity**: Resolved a visual glitch where the side Navigation Rail
+    would unexpectedly resize when the scrollbar in the main content area appeared
+    or disappeared.
+
+================================================================================
+== LINKS & SUPPORT
+================================================================================
+
+-   **Main GitHub Repository**: [REPLACE WITH YOUR REPO URL]
+    https://github.com/Mr-Muhammad-Kashan/MK-Tools
+
+-   **Report an Issue / Bug**: [REPLACE WITH YOUR GITHUB ISSUES URL]
+    https://github.com/Mr-Muhammad-Kashan/MK-Tools/issues
+
+-   **View This Release on GitHub**: [REPLACE WITH YOUR GITHUB RELEASE TAG URL]
+    https://github.com/Mr-Muhammad-Kashan/MK-Tools/releases/tag/v1.1.0

@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "release_name": "The Initial Update",
+  "release_date": "2025-09-01",
+  "status": "stable",
+  "mandatory": false,
+  "min_os_version": "Windows 10 20H2",
+  "system_requirements": "Requires Windows 10/11 (Pro or higher), 4GB RAM, .NET Framework 4.8",
+  "download_url": "https://github.com/Mr-Muhammad-Kashan/MK-Tools/releases/download/v1.1.0/MK-Tools_v1.1.0_Setup.exe",
+  "changelog_url": "https://github.com/Mr-Muhammad-Kashan/MK-Tools/releases/tag/v1.1.0",
+  "checksums": {
+    "sha256": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6"
+  },
+  "release_notes": [
+    {
+      "type": "feature",
+      "description": "Introduced a new non-blocking, automatic update checker to keep users on the latest version."
+    },
+    {
+      "type": "feature",
+      "description": "Added a 'Group Policy' section to apply optimized system policies for privacy and performance."
+    },
+    {
+      "type": "improvement",
+      "description": "Re-architected the `CleanCacheFrame` to use a high-performance PowerShell-based size calculation engine for 100% accuracy."
+    },
+    {
+      "type": "improvement",
+      "description": "Upgraded all hover sound effects to a stateful protocol to prevent auditory spam."
+    },
+    {
+      "type": "fix",
+      "description": "Resolved a startup race condition in `AnimatedTweakCard` by implementing a centralized state injection protocol."
+    },
+    {
+      "type": "fix",
+      "description": "Corrected a visual layout bug in the `NavigationRail` that caused it to resize when the content frame's scrollbar appeared."
+    }
+  ]
+}

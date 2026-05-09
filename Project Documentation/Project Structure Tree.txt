@@ -1,0 +1,229 @@
+# 🌟 MK-TOOLS v2.0 - MILITARY-GRADE MODULAR ARCHITECTURE TREE 🌟
+# ============================================================================
+# DEFINITIVE ARCHITECTURAL BLUEPRINT FOR INDUSTRIAL-GRADE REFACTORING
+# ============================================================================
+#
+# OVERVIEW:
+# This document outlines the absolute, definitive, and highly decoupled project 
+# structure required to refactor the monolithic ~10,000-line `main.py` application 
+# into a professional, scalable, and maintainable enterprise software suite.
+# 
+# RIGOROUS FORENSIC ANALYSIS:
+# Every single class identified in the monolithic `main.py` has been explicitly 
+# mapped to its new modular destination below to guarantee 0% feature loss and 
+# 100% operational parity.
+# ============================================================================
+
+```text
+📦 MK-Tools-Modular
+ ┣ 📂 assets                        # ----------------------------------------
+ ┃ ┃                              # CENTRALIZED RESOURCES: All non-code assets.
+ ┃ ┃                              # Must be packaged seamlessly by PyInstaller.
+ ┃ ┃                              # ----------------------------------------
+ ┃ ┣ 📂 fonts                     # Custom Typography
+ ┃ ┃ ┣ 📜 NotoColorEmoji-Regular.ttf # Fallback/Emoji font rendering
+ ┃ ┃ ┗ 📜 Roboto-Bold.ttf            # Primary application typeface
+ ┃ ┣ 📂 gifs                      # Animated UI States
+ ┃ ┃ ┣ 📜 Advanced-Scan.gif          # Played during DISM operations
+ ┃ ┃ ┣ 📜 Cleaning.gif               # Played during Temp cache clearing
+ ┃ ┃ ┣ 📜 Done.gif                   # Played on operational success
+ ┃ ┃ ┣ 📜 Performance-gif.gif        # Performance tab ambient animation
+ ┃ ┃ ┣ 📜 Simple-Scan.gif            # Played during SFC operations
+ ┃ ┃ ┣ 📜 UI-gif.gif                 # UI tweaks tab ambient animation
+ ┃ ┃ ┗ 📜 Yipee.gif                  # Easter egg/Celebratory animation
+ ┃ ┣ 📂 icons                     # Static Visual Assets (Raster)
+ ┃ ┃ ┣ 📜 About.png                  # About section icon
+ ┃ ┃ ┣ 📜 Clean-Cache.png            # Clean section icon
+ ┃ ┃ ┣ 📜 Cleaning.png               # In-progress cleaning indicator
+ ┃ ┃ ┣ 📜 Email.ico                  # Support/Contact icon
+ ┃ ┃ ┣ 📜 Fix-Windows.png            # Fix section icon
+ ┃ ┃ ┣ 📜 FixWindows-2.png           # Alternative fix icon
+ ┃ ┃ ┣ 📜 FixWindows.png             # Primary fix icon
+ ┃ ┃ ┣ 📜 GitHub.ico                 # Repository link icon
+ ┃ ┃ ┣ 📜 Group-Policy.png           # Policy editor section icon
+ ┃ ┃ ┣ 📜 Linkedin.ico               # Author profile link icon
+ ┃ ┃ ┣ 📜 Logo.ico                   # MAIN APPLICATION ICON (EXE icon)
+ ┃ ┃ ┣ 📜 Performance-Icon.png       # Performance section icon
+ ┃ ┃ ┣ 📜 Policies.png               # Sub-policy indicator
+ ┃ ┃ ┣ 📜 Programmer.png             # Developer credits icon
+ ┃ ┃ ┣ 📜 Rocket.png                 # Optimization trigger icon
+ ┃ ┃ ┣ 📜 Sound-OFF.png              # Audio toggle (muted) state
+ ┃ ┃ ┣ 📜 Sound-ON.png               # Audio toggle (active) state
+ ┃ ┃ ┣ 📜 UI-Responsiveness.png      # UX section icon
+ ┃ ┃ ┗ 📜 UI-Tweaks.png              # UI modification indicator
+ ┃ ┣ 📂 sounds                    # ----------------------------------------
+ ┃ ┃                              # AUDITORY FEEDBACK ENGINE (AFE)
+ ┃ ┃                              # Async audio files for gamified UX
+ ┃ ┃                              # ----------------------------------------
+ ┃ ┃ ┣ 📜 Advanced-Scan.mp3
+ ┃ ┃ ┣ 📜 App-Shutdown.mp3
+ ┃ ┃ ┣ 📜 Clean-All-Complete.mp3
+ ┃ ┃ ┣ 📜 Clean-all-button.mp3
+ ┃ ┃ ┣ 📜 Cleaning.mp3
+ ┃ ┃ ┣ 📜 Coin.mp3
+ ┃ ┃ ┣ 📜 Email-Button-Click.mp3
+ ┃ ┃ ┣ 📜 Error-404.mp3
+ ┃ ┃ ┣ 📜 Feature-Hover.mp3
+ ┃ ┃ ┣ 📜 Fix-Windows-Hover-Effect.mp3
+ ┃ ┃ ┣ 📜 Github-Button-Click.mp3
+ ┃ ┃ ┣ 📜 Horray-No-Errors-Found.mp3
+ ┃ ┃ ┣ 📜 JUST DO IT - Sound Effect.mp3
+ ┃ ┃ ┣ 📜 LinkedIn-Button-Click.mp3
+ ┃ ┃ ┣ 📜 Manual-Clean.mp3
+ ┃ ┃ ┣ 📜 Money.mp3
+ ┃ ┃ ┣ 📜 Mouse-Click-Ok.mp3
+ ┃ ┃ ┣ 📜 Mouse-Click.mp3
+ ┃ ┃ ┣ 📜 Mouse-Hover.mp3
+ ┃ ┃ ┣ 📜 Navigation-Click-Sound.mp3
+ ┃ ┃ ┣ 📜 Navigation-Sound.mp3
+ ┃ ┃ ┣ 📜 Notification.mp3
+ ┃ ┃ ┣ 📜 Oh-No.mp3
+ ┃ ┃ ┣ 📜 Questionmark.mp3
+ ┃ ┃ ┣ 📜 Reset-Defaults.mp3
+ ┃ ┃ ┣ 📜 Scan-Fix-Windows-Effect.mp3
+ ┃ ┃ ┣ 📜 Startup-Sound.mp3
+ ┃ ┃ ┣ 📜 Thanks-Coffee_Button.mp3
+ ┃ ┃ ┣ 📜 Turn-Off.mp3
+ ┃ ┃ ┣ 📜 Turn-On.mp3
+ ┃ ┃ ┣ 📜 Warning.mp3
+ ┃ ┃ ┣ 📜 setup-unsuccessful.mp3
+ ┃ ┃ ┗ 📜 what-is-it.mp3
+ ┃ ┣ 📂 svg                       # Vector Graphics (Scalable for High DPI)
+ ┃ ┃ ┣ 📜 About.svg
+ ┃ ┃ ┣ 📜 Clean.svg
+ ┃ ┃ ┣ 📜 Dashboard.svg
+ ┃ ┃ ┣ 📜 Fix-Windows.svg
+ ┃ ┃ ┣ 📜 Group-Policy.svg
+ ┃ ┃ ┣ 📜 Performance.svg
+ ┃ ┃ ┗ 📜 UI-Responsiveness.svg
+ ┃ ┗ 📂 tools                     # EXTERNAL BINARIES & SYSTEM RESOURCES
+ ┃   ┗ 📂 group_policy            # GPO Management toolkit
+ ┃     ┣ 📂 MyLocalGPO_Backup     # Extracted default GPO configurations
+ ┃     ┃ ┗ 📂 {C062992B-B594-4089-9BC2-FC1DC341B30D}
+ ┃     ┃   ┣ 📂 DomainSysvol
+ ┃     ┃   ┃ ┗ 📂 GPO
+ ┃     ┃   ┃   ┣ 📂 Machine
+ ┃     ┃   ┃   ┃ ┣ 📂 microsoft
+ ┃     ┃   ┃   ┃ ┃ ┗ 📂 windows nt
+ ┃     ┃   ┃   ┃ ┃   ┣ 📂 Audit
+ ┃     ┃   ┃   ┃ ┃   ┃ ┗ 📜 audit.csv
+ ┃     ┃   ┃   ┃ ┃   ┗ 📂 SecEdit
+ ┃     ┃   ┃   ┃ ┃     ┗ 📜 GptTmpl.inf
+ ┃     ┃   ┃   ┃ ┗ 📜 registry.pol
+ ┃     ┃   ┃   ┗ 📂 User
+ ┃     ┃   ┃     ┗ 📜 registry.pol
+ ┃     ┃   ┣ 📜 Backup.xml
+ ┃     ┃   ┗ 📜 Bkupinfo.xml
+ ┃     ┗ 📜 LGPO.exe              # Microsoft Local Group Policy Utility
+ ┃
+ ┣ 📂 src                           # ----------------------------------------
+ ┃ ┃                              # SOURCE CODE ROOT: Contains all Python logic
+ ┃ ┃                              # ----------------------------------------
+ ┃ ┣ 📜 main.py                     # Entry point (Minimal code). 
+ ┃ ┃                              # Initializes logger, triggers PrivilegeManager, 
+ ┃ ┃                              # starts TweakStateController, and launches App.
+ ┃ ┃
+ ┃ ┣ 📂 core                        # ----------------------------------------
+ ┃ ┃ ┃                            # INFRASTRUCTURE & GLOBAL STATE
+ ┃ ┃ ┃                            # ----------------------------------------
+ ┃ ┃ ┣ 📜 __init__.py               
+ ┃ ┃ ┣ 📜 app_config.py             # Contains: [AppConfig]
+ ┃ ┃ ┣ 📜 theme.py                  # Contains: [Theme]
+ ┃ ┃ ┣ 📜 screen_manager.py         # Contains: [ScreenManager], [UIManager]
+ ┃ ┃ ┣ 📜 font_manager.py           # Contains: [FontManager]
+ ┃ ┃ ┣ 📜 privilege_manager.py      # Contains: [PrivilegeManager]
+ ┃ ┃ ┣ 📜 sound_engine.py           # Contains: [SoundManager]
+ ┃ ┃ ┣ 📜 hardware_analyzer.py      # Contains: [HardwareTierManager]
+ ┃ ┃ ┣ 📜 update_manager.py         # Contains: [UpdateManager]
+ ┃ ┃ ┗ 📜 state_controller.py       # Contains: [TweakStateController], [ApplicationStateController]
+ ┃ ┃
+ ┃ ┣ 📂 controllers                 # ----------------------------------------
+ ┃ ┃ ┃                            # PURE BUSINESS LOGIC (No CustomTkinter Imports)
+ ┃ ┃ ┃                            # ----------------------------------------
+ ┃ ┃ ┣ 📜 __init__.py
+ ┃ ┃ ┣ 📜 file_cleaner.py           # Contains: [FileDeletionEngine], [ParallelAuditor]
+ ┃ ┃ ┣ 📜 diagnostic_logic.py       # Contains: [DiagnosticLogicController]
+ ┃ ┃ ┣ 📜 group_policy.py           # Contains: [GroupPolicyController]
+ ┃ ┃ ┃
+ ┃ ┃ ┣ 📂 performance_tweaks      # TLCs: Performance Modifiers
+ ┃ ┃ ┃ ┣ 📜 __init__.py
+ ┃ ┃ ┃ ┣ 📜 fast_startup.py         # Contains: [DisableFastStartupTweak]
+ ┃ ┃ ┃ ┣ 📜 compressed_memory.py    # Contains: [DisableCompressedMemoryTweak]
+ ┃ ┃ ┃ ┣ 📜 gpu_scheduling.py       # Contains: [GPUSchedulingTweak]
+ ┃ ┃ ┃ ┣ 📜 process_priority.py     # Contains: [ForegroundPriorityController]
+ ┃ ┃ ┃ ┗ 📜 svchost_split.py        # Contains: [SvcHostSplitTweak]
+ ┃ ┃ ┃
+ ┃ ┃ ┗ 📂 ui_tweaks               # TLCs: UX & System UI Modifiers
+ ┃ ┃   ┣ 📜 __init__.py
+ ┃ ┃   ┣ 📜 context_menu.py         # Contains: [ClassicContextMenuTweak]
+ ┃ ┃   ┣ 📜 menu_delay.py           # Contains: [MenuShowDelayTweak]
+ ┃ ┃   ┣ 📜 jpeg_quality.py         # Contains: [JPEGQualityTweak]
+ ┃ ┃   ┗ 📜 web_search.py           # Contains: [DisableWebSearchTweak]
+ ┃ ┃
+ ┃ ┣ 📂 ui                          # ----------------------------------------
+ ┃ ┃ ┃                            # PRESENTATION LAYER (CustomTkinter)
+ ┃ ┃ ┃                            # ----------------------------------------
+ ┃ ┃ ┣ 📜 __init__.py
+ ┃ ┃ ┣ 📜 app_window.py             # Contains: [App] - Main Window orchestrator
+ ┃ ┃ ┣ 📜 splash_screen.py          # Contains: [SplashScreen]
+ ┃ ┃ ┃
+ ┃ ┃ ┣ 📂 components              # Reusable Modular UI Widgets
+ ┃ ┃ ┃ ┣ 📜 __init__.py
+ ┃ ┃ ┃ ┣ 📜 navigation_rail.py      # Contains: [NavigationRail]
+ ┃ ┃ ┃ ┣ 📜 animated_tweak_card.py  # Contains: [AnimatedTweakCard]
+ ┃ ┃ ┃ ┣ 📜 buttons.py              # Contains: [GlassButton], [BuyMeACoffeeButton], [SocialButton], [CircularActionButton]
+ ┃ ┃ ┃ ┣ 📜 terminal_widget.py      # Contains: [TerminalWidget]
+ ┃ ┃ ┃ ┣ 📜 progress_bars.py        # Contains: [CleanAllProgressBar]
+ ┃ ┃ ┃ ┣ 📜 animated_gif.py         # Contains: [AnimatedGIFLabel]
+ ┃ ┃ ┃ ┣ 📜 dynamic_hints.py        # Contains: [DynamicHintEngine]
+ ┃ ┃ ┃ ┣ 📜 clean_cache_card.py     # Contains: [CleanCacheCard]
+ ┃ ┃ ┃ ┗ 📜 dashboard_cards.py      # Contains: [_DashboardCard], [_ComingSoonCard]
+ ┃ ┃ ┃
+ ┃ ┃ ┣ 📂 frames                  # Main Application Pages (Views)
+ ┃ ┃ ┃ ┣ 📜 __init__.py
+ ┃ ┃ ┃ ┣ 📜 base_frame.py           # Contains: [BaseContentFrame]
+ ┃ ┃ ┃ ┣ 📜 dashboard_frame.py      # Contains: [DashboardFrame]
+ ┃ ┃ ┃ ┣ 📜 performance_frame.py    # Contains: [PerformanceFrame]
+ ┃ ┃ ┃ ┣ 📜 ui_tweaks_frame.py      # Contains: [UITweaksFrame]
+ ┃ ┃ ┃ ┣ 📜 fix_windows_frame.py    # Contains: [FixWindowsFrame]
+ ┃ ┃ ┃ ┣ 📜 clean_cache_frame.py    # Contains: [CleanCacheFrame]
+ ┃ ┃ ┃ ┣ 📜 policy_frame.py         # Contains: [PolicyFrame]
+ ┃ ┃ ┃ ┗ 📜 about_frame.py          # Contains: [AboutFrame]
+ ┃ ┃ ┃
+ ┃ ┃ ┗ 📂 dialogs                 # Modals, Popups & Overlays
+ ┃ ┃   ┣ 📜 __init__.py
+ ┃ ┃   ┣ 📜 base_modal.py           # Contains: [BaseModalDialog]
+ ┃ ┃   ┣ 📜 config_dialog.py        # Contains: [ConfigDialog]
+ ┃ ┃   ┣ 📜 success_popups.py       # Contains: [RepairSuccessPopup], [CleanAllSuccessPopup]
+ ┃ ┃   ┣ 📜 result_popups.py        # Contains: [ResultPopup], [ResultPopupWithFix]
+ ┃ ┃   ┣ 📜 toast_notification.py   # Contains: [InlineNotificationOverlay]
+ ┃ ┃   ┗ 📜 update_notification.py  # Contains: [UpdateNotificationPopup]
+ ┃ ┃
+ ┃ ┗ 📂 utils                       # ----------------------------------------
+ ┃   ┃                            # GLOBAL STATELESS UTILITIES
+ ┃   ┃                            # ----------------------------------------
+ ┃   ┣ 📜 __init__.py
+ ┃   ┣ 📜 paths.py                  # Critical: Resolves sys._MEIPASS for PyInstaller assets
+ ┃   ┣ 📜 logger.py                 # File & Stream logging (e.g. mk-tools_TIMESTAMP.log)
+ ┃   ┣ 📜 registry_ops.py           # Safe WinReg wrappers
+ ┃   ┗ 📜 powershell_runner.py      # Secure, detached Subprocess PowerShell execution
+ ┃
+ ┣ 📂 config                        # ----------------------------------------
+ ┃ ┗ 📜 app_settings.json           # Stores runtime user preferences
+ ┃
+ ┣ 📂 data                          # ----------------------------------------
+ ┃ ┣ 📜 version.json                # Local version tracking file (used by UpdateManager)
+ ┃ ┗ 📜 version.txt                 # Legacy version tracking
+ ┃
+ ┣ 📂 logs                          # ----------------------------------------
+ ┃ ┗ 📜 .gitkeep                    # Retains folder in git (logs generated here)
+ ┃
+ ┣ 📜 mk-tools-installer.iss        # ----------------------------------------
+ ┃                                # INNO SETUP: Compiler configuration for the exe installer
+ ┃
+ ┣ 📜 Pyinstaller-Command.txt       # Build instructions (`pyinstaller --onefile...`)
+ ┣ 📜 requirements.txt              # Pip dependencies
+ ┣ 📜 LICENSE                       # Legal / License constraints
+ ┣ 📜 README.md                     # GitHub Repository documentation
+ ┗ 📜 .gitignore                    # Prevents __pycache__ and build/ artifacts
+```
