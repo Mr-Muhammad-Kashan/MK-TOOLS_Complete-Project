@@ -1,0 +1,5 @@
+from .fast_startup import DisableFastStartupTweak
+from .compressed_memory import DisableCompressedMemoryTweak
+from .gpu_scheduling import GPUSchedulingTweak
+from .process_priority import ForegroundPriorityController
+from .svchost_split import SvcHostSplitTweak

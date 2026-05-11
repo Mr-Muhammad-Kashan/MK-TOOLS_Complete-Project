@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+build/
+dist/
+*.spec
+*.log
+Final Product/
+Production Files/src/build/
+Production Files/src/dist/
+Production Files/src/*.spec
