@@ -3,6 +3,9 @@
 # ========================================================================
 
 
+from core.update_manager import UpdateManager
+from core.app_config import AppConfig
+
 from controllers.performance_tweaks.fast_startup import DisableFastStartupTweak
 from controllers.performance_tweaks.compressed_memory import DisableCompressedMemoryTweak
 from controllers.performance_tweaks.gpu_scheduling import GPUSchedulingTweak
