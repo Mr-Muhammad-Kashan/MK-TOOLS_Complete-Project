@@ -2,6 +2,10 @@
 # Auto-generated extraction from main.py
 # ========================================================================
 
+
+import json
+from packaging.version import parse as parse_version
+from utils.paths import resource_path
 # ===================================================================================
 # CLASS: UpdateManager (v1.0 - Zero-Latency Update Protocol)
 #
