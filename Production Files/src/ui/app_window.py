@@ -53,7 +53,7 @@ from core.font_manager import FontManager
 from core.hardware_analyzer import HardwareTierManager
 from core.sound_engine import SoundManager
 from core.update_manager import UpdateManager
-from core.state_controller import ApplicationStateController
+from core.state_controller import ApplicationStateController, TweakStateController
 
 from utils.paths import resource_path
 from utils.logger import logger
