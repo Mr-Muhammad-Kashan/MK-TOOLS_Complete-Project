@@ -69,6 +69,33 @@ from ui.frames.about_frame import AboutFrame
 
 
 
+import os
+import sys
+import ctypes
+import time
+import subprocess
+import threading
+import tkinter as tk
+from tkinter import messagebox
+import customtkinter as ctk
+from PIL import Image, ImageTk, ImageDraw
+import pygame
+import psutil
+import logging
+import requests
+from typing import List, Dict, Optional, Callable, Any, Tuple
+
+try:
+    import winreg
+except ImportError:
+    pass
+
+try:
+    import wmi
+except ImportError:
+    pass
+
+
 class App(ctk.CTk):
     """
     The main application window, now with an integrated pre-flight check system
