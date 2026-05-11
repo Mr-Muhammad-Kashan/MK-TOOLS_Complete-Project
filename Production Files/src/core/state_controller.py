@@ -2,6 +2,18 @@
 # Auto-generated extraction from main.py
 # ========================================================================
 
+
+from controllers.performance_tweaks.fast_startup import DisableFastStartupTweak
+from controllers.performance_tweaks.compressed_memory import DisableCompressedMemoryTweak
+from controllers.performance_tweaks.gpu_scheduling import GPUSchedulingTweak
+from controllers.performance_tweaks.process_priority import ForegroundPriorityController
+from controllers.performance_tweaks.svchost_split import SvcHostSplitTweak
+
+from controllers.ui_tweaks.context_menu import ClassicContextMenuTweak
+from controllers.ui_tweaks.menu_delay import MenuShowDelayTweak
+from controllers.ui_tweaks.jpeg_quality import JPEGQualityTweak
+from controllers.ui_tweaks.web_search import DisableWebSearchTweak
+
 # ===================================================================================
 # PARADIGM SOLUTION: TweakStateController (v1.0 - Zero-Race-Condition Engine)
 #
