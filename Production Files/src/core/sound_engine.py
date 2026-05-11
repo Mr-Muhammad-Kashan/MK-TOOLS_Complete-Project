@@ -2,6 +2,12 @@
 # Auto-generated extraction from main.py
 # ========================================================================
 
+
+import os
+import threading
+from queue import Queue
+from utils.paths import resource_path
+from utils.logger import logger
 # ===================================================================================
 # SECTION 4.5: AUDITORY FEEDBACK ENGINE (AFE) (v3.0 - Zero-Latency Startup)
 #
