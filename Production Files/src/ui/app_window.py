@@ -46,6 +46,28 @@ from PIL import Image, ImageTk, ImageDraw
 import pygame
 from typing import List, Dict, Optional, Callable, Any, Tuple
 
+from core.app_config import AppConfig
+from core.theme import Theme
+from core.screen_manager import ScreenManager, UIManager
+from core.font_manager import FontManager
+from core.hardware_analyzer import HardwareTierManager
+from core.sound_engine import SoundManager
+from core.update_manager import UpdateManager
+from core.state_controller import ApplicationStateController
+
+from utils.paths import resource_path
+from utils.logger import logger
+
+from ui.components.navigation_rail import NavigationRail
+from ui.frames.dashboard_frame import DashboardFrame
+from ui.frames.performance_frame import PerformanceFrame
+from ui.frames.ui_tweaks_frame import UITweaksFrame
+from ui.frames.fix_windows_frame import FixWindowsFrame
+from ui.frames.clean_cache_frame import CleanCacheFrame
+from ui.frames.policy_frame import PolicyFrame
+from ui.frames.about_frame import AboutFrame
+
+
 
 class App(ctk.CTk):
     """

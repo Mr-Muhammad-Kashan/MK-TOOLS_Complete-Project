@@ -43,6 +43,13 @@ from PIL import Image, ImageTk, ImageDraw
 import pygame
 from typing import List, Dict, Optional, Callable, Any, Tuple
 
+from ui.frames.base_frame import BaseContentFrame
+from utils.paths import resource_path
+from utils.logger import logger
+from core.theme import Theme
+from core.font_manager import FontManager
+
+
 
 class AboutFrame(BaseContentFrame):
     """
