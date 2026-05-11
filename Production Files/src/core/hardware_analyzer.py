@@ -2,6 +2,11 @@
 # Auto-generated extraction from main.py
 # ========================================================================
 
+
+import os
+import psutil
+import logging
+from utils.logger import logger
 # ===================================================================================
 # CLASS: HardwareTierManager (v1.0 - System Profiling & Tiering Engine)
 #
@@ -32,6 +37,33 @@ import customtkinter as ctk
 from PIL import Image, ImageTk, ImageDraw
 import pygame
 from typing import List, Dict, Optional, Callable, Any, Tuple
+
+
+import os
+import sys
+import ctypes
+import time
+import subprocess
+import threading
+import tkinter as tk
+from tkinter import messagebox
+import customtkinter as ctk
+from PIL import Image, ImageTk, ImageDraw
+import pygame
+import psutil
+import logging
+import requests
+from typing import List, Dict, Optional, Callable, Any, Tuple
+
+try:
+    import winreg
+except ImportError:
+    pass
+
+try:
+    import wmi
+except ImportError:
+    pass
 
 
 class HardwareTierManager:

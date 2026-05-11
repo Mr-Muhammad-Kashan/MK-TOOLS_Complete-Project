@@ -23,7 +23,7 @@ To ensure absolute compilation purity and avoid library conflicts, you must comp
    ```
 4. **Install all required dependencies and the PyInstaller tool:**
    ```powershell
-   pip install customtkinter pillow pygame psutil WMI requests pywin32 pyinstaller
+   pip install customtkinter pillow pygame psutil WMI requests pyinstaller
    ```
    *(Note: `pywin32` is critical for some Windows-specific operations like WMI and ShellExecute).*
 
