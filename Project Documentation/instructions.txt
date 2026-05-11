@@ -1,0 +1,95 @@
+# ===============================================================================================
+# 🎖️ MK-TOOLS (v1.0) COMPILATION & PACKAGING DIRECTIVE 🎖️
+# TARGET: Windows 10/11 Production Release
+# ===============================================================================================
+
+This document provides a highly detailed, step-by-step guide to compiling the newly modularized MK-Tools project into a standalone, single-file `.exe`. The resulting `.exe` will contain all necessary Python logic and libraries, meaning end-users will NOT need Python installed on their machines.
+
+The executable will rely ONLY on the external `assets/` folder, which will be packaged alongside it using the Inno Setup Installer.
+
+## ----------------------------------------------------------------------------------------------
+## PHASE 1: ENVIRONMENT PREPARATION (MINICONDA)
+## ----------------------------------------------------------------------------------------------
+To ensure absolute compilation purity and avoid library conflicts, you must compile this application in a clean, dedicated Miniconda environment.
+
+1. **Open Miniconda Prompt** as an Administrator.
+2. **Create a fresh environment specifically for PyInstaller:**
+   ```powershell
+   conda create --name mktools-build python=3.12 -y
+   ```
+3. **Activate the environment:**
+   ```powershell
+   conda activate mktools-build
+   ```
+4. **Install all required dependencies and the PyInstaller tool:**
+   ```powershell
+   pip install customtkinter pillow pygame psutil WMI requests pywin32 pyinstaller
+   ```
+   *(Note: `pywin32` is critical for some Windows-specific operations like WMI and ShellExecute).*
+
+## ----------------------------------------------------------------------------------------------
+## PHASE 2: COMPILING THE EXECUTABLE
+## ----------------------------------------------------------------------------------------------
+You must execute the compilation command from the correct directory so PyInstaller can resolve the asset paths correctly.
+
+1. **Navigate to the `src` folder** inside your Production Files:
+   ```powershell
+   cd "C:\Path\To\Your\Repository\Production Files\src"
+   ```
+2. **Execute the PyInstaller command:**
+   Run the exact command below. This command uses `--onefile` to bundle all Python logic into a single executable, and `--windowed` (or `--noconsole`) to hide the command prompt when the application runs.
+
+   ```powershell
+   pyinstaller --noconfirm --onefile --windowed --icon="../assets/icons/Logo.ico" --name="MK-Tools(v1.0)" main.py
+   ```
+
+   *Breakdown of the command:*
+   - `--noconfirm`: Overwrites previous build directories without asking.
+   - `--onefile`: Bundles the entire Python runtime and libraries into a single `.exe`.
+   - `--windowed`: Prevents the black console window from appearing behind the UI.
+   - `--icon`: Embeds the application logo directly into the `.exe`.
+   - `--name`: The final name of the executable.
+
+3. **Locate the Output:**
+   Once compilation is 100% complete, navigate to:
+   `Production Files/src/dist/`
+   Inside this folder, you will find `MK-Tools(v1.0).exe`.
+
+## ----------------------------------------------------------------------------------------------
+## PHASE 3: FINAL ASSEMBLY & INNO SETUP
+## ----------------------------------------------------------------------------------------------
+Now that you have a standalone `.exe`, you need to package it with the assets.
+
+1. **Prepare the Final Product Directory:**
+   In the root of your project, you have a `Final Product` folder.
+   - Move `MK-Tools(v1.0).exe` from the `dist/` folder into the `Final Product` folder.
+   - Copy the entire `assets` folder from `Production Files/assets` and paste it directly into the `Final Product` folder.
+
+   Your `Final Product` structure should look exactly like this:
+   ```text
+   📦 Final Product
+    ┣ 📂 assets
+    ┃ ┣ 📂 fonts
+    ┃ ┣ 📂 gifs
+    ┃ ┣ 📂 icons
+    ┃ ┣ 📂 sounds
+    ┃ ┣ 📂 svg
+    ┃ ┗ 📂 tools
+    ┗ 📜 MK-Tools(v1.0).exe
+   ```
+
+2. **Verify Operation (Local Test):**
+   Double-click `MK-Tools(v1.0).exe` inside the `Final Product` folder. Because the `assets` folder is right next to it, the `utils/paths.py` resolver will successfully find all icons, sounds, and the LGPO tool. The app should launch flawlessly.
+
+3. **Inno Setup Installer Compilation:**
+   - Open your `mk-tools-installer.iss` file.
+   - Ensure the `Source:` paths in the `[Files]` section point to your `Final Product/MK-Tools(v1.0).exe` and `Final Product/assets/*`.
+   - Compile the script in Inno Setup.
+
+   This will generate a seamless `Setup.exe` that billions of users can download and install, perfectly deploying the executable alongside the required assets.
+
+## ----------------------------------------------------------------------------------------------
+## POST-MORTEM NOTES
+## ----------------------------------------------------------------------------------------------
+- **Antivirus False Positives:** Because PyInstaller bundles the Python runtime, some restrictive antiviruses might flag the `.exe` as suspicious. This is a known PyInstaller limitation. Providing a digital signature (Code Signing Certificate) for the `.exe` mitigates this issue.
+- **Dependencies:** If you add any new external Python libraries in the future, you must `pip install` them in your `mktools-build` Miniconda environment before running PyInstaller again.
